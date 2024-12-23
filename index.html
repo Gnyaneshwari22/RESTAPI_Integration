@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <div id="heading">
+      <h2>Notes Application</h2>
+      <div>
+        <input type="text" />
+      </div>
+      <div id="counts"></div>
+    </div>
+
+    <form onsubmit="HandleFormSubmit(event)">
+      <lable for="title">Notes Title</lable>
+      <input id="title" type="text" name="title" />
+
+      <label for="description">Description</label>
+      <textarea name="description" id="description"></textarea>
+
+      <button type="submit">Add Note</button>
+    </form>
+
+    <div id="NotesCards"></div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+  <script src="script.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <div id="heading">
+      <h2>Notes Application</h2>
+      <div id="counts">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search notes..."
+          oninput="searchNotes(event)"
+        />
+        <p>Total Notes: <span id="totalNotes">0</span></p>
+        <p>Search Results: <span id="searchResults">0</span></p>
+      </div>
+    </div>
+
+    <form onsubmit="HandleFormSubmit(event)">
+      <label for="title">Notes Title</label>
+      <input
+        id="title"
+        type="text"
+        name="title"
+        placeholder="Enter note title"
+        required
+      />
+
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="5"
+        placeholder="Enter note description"
+        required
+      ></textarea>
+
+      <button type="submit">Add Note</button>
+    </form>
+
+    <div id="NotesCards"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
