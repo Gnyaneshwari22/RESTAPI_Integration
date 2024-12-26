@@ -10,7 +10,7 @@ function HandleFormSubmit(event) {
 
   axios
     .post(
-      "https://crudcrud.com/api/86be6c68357241abbb16be4986493751/notes",
+      "https://crudcrud.com/api/4e0d879ec1124b48a803aa7a60f446e9/notes",
       NotesDetails
     )
     .then((res) => {
@@ -49,7 +49,7 @@ function displayNotesOnDScreen(NotesDetails) {
 function deleteNote(noteId, noteCard) {
   axios
     .delete(
-      `https://crudcrud.com/api/86be6c68357241abbb16be4986493751/notes/${noteId}`
+      `https://crudcrud.com/api/4e0d879ec1124b48a803aa7a60f446e9/notes/${noteId}`
     )
     .then(() => {
       console.log("Note deleted successfully.");
@@ -83,7 +83,7 @@ function updateCounts(total, searchResults) {
 // Fetch all notes initially and display them.
 window.onload = function () {
   axios
-    .get("https://crudcrud.com/api/86be6c68357241abbb16be4986493751/notes")
+    .get("https://crudcrud.com/api/4e0d879ec1124b48a803aa7a60f446e9/notes")
     .then((res) => {
       allNotes = res.data; // Store all notes.
       allNotes.forEach((note) => displayNotesOnDScreen(note)); // Display notes.
