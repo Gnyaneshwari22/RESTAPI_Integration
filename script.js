@@ -10,7 +10,7 @@ function HandleFormSubmit(event) {
 
   axios
     .post(
-      "https://crudcrud.com/api/4e0d879ec1124b48a803aa7a60f446e9/notes",
+      "https://crudcrud.com/api/9fa8c6f3a4b449379e82e12425b373c0/notes",
       NotesDetails
     )
     .then((res) => {
@@ -49,11 +49,11 @@ function displayNotesOnDScreen(NotesDetails) {
 function deleteNote(noteId, noteCard) {
   axios
     .delete(
-      `https://crudcrud.com/api/4e0d879ec1124b48a803aa7a60f446e9/notes/${noteId}`
+      `https://crudcrud.com/api/9fa8c6f3a4b449379e82e12425b373c0/notes/${noteId}`
     )
     .then(() => {
       console.log("Note deleted successfully.");
-      allNotes = allNotes.filter((note) => note._id !== noteId); // Remove the note from the list.
+      allNotes = allNotes.filter((note) => note._id !== noteId); // Removing the note from the list.
       noteCard.remove();
       updateCounts(allNotes.length, allNotes.length);
     })
@@ -63,9 +63,8 @@ function deleteNote(noteId, noteCard) {
 function searchNotes(event) {
   const searchTerm = event.target.value.toLowerCase();
   const filteredNotes = allNotes.filter(
-    (note) =>
-      note.notestitle.toLowerCase().includes(searchTerm) ||
-      note.notecontent.toLowerCase().includes(searchTerm)
+    (note) => note.notestitle.toLowerCase().includes(searchTerm)
+    // || note.notecontent.toLowerCase().includes(searchTerm)
   );
 
   const notesContainer = document.getElementById("NotesCards");
@@ -80,10 +79,10 @@ function updateCounts(total, searchResults) {
   document.getElementById("searchResults").textContent = searchResults;
 }
 
-// Fetch all notes initially and display them.
+// Fetch all the notes initially and display them.
 window.onload = function () {
   axios
-    .get("https://crudcrud.com/api/4e0d879ec1124b48a803aa7a60f446e9/notes")
+    .get("https://crudcrud.com/api/9fa8c6f3a4b449379e82e12425b373c0/notes")
     .then((res) => {
       allNotes = res.data; // Store all notes.
       allNotes.forEach((note) => displayNotesOnDScreen(note)); // Display notes.

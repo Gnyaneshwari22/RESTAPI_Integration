@@ -1,83 +1,85 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Welcome</h1>
-    <div id="heading">
-      <h2>Notes Application</h2>
-      <div>
-        <input type="text" />
-      </div>
-      <div id="counts"></div>
-    </div>
-
-    <form onsubmit="HandleFormSubmit(event)">
-      <lable for="title">Notes Title</lable>
-      <input id="title" type="text" name="title" />
-
-      <label for="description">Description</label>
-      <textarea name="description" id="description"></textarea>
-
-      <button type="submit">Add Note</button>
-    </form>
-
-    <div id="NotesCards"></div>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
-  <script src="script.js"></script>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes Application</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Welcome</h1>
-    <div id="heading">
-      <h2>Notes Application</h2>
-      <div id="counts">
-        <input
-          type="text"
-          id="search"
-          placeholder="Search notes..."
-          oninput="searchNotes(event)"
-        />
-        <p>Total Notes: <span id="totalNotes">0</span></p>
-        <p>Search Results: <span id="searchResults">0</span></p>
+    <div id="heading" class="container my-4">
+      <h2 class="text-center mb-4">Welcome To Notes Application</h2>
+      <div id="counts" class="d-flex flex-column align-items-center">
+        <div class="input-group mb-3 w-50">
+          <input
+            type="text"
+            class="form-control"
+            id="search"
+            placeholder="Search notes..."
+            oninput="searchNotes(event)"
+          />
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+        <div class="text-center">
+          <p class="fw-bold">
+            Total Notes: <span id="totalNotes" class="fw-bold">0</span>
+          </p>
+          <p>
+            Search Results: <span id="searchResults" class="fw-bold">0</span>
+          </p>
+        </div>
       </div>
     </div>
 
-    <form onsubmit="HandleFormSubmit(event)">
-      <label for="title">Notes Title</label>
-      <input
-        id="title"
-        type="text"
-        name="title"
-        placeholder="Enter note title"
-        required
-      />
+    <div class="container">
+      <form
+        onsubmit="HandleFormSubmit(event)"
+        class="bg-light p-4 rounded shadow-sm mb-4"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label fw-bold">Notes Title</label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="Enter note title"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label fw-bold"
+            >Description</label
+          >
+          <textarea
+            id="description"
+            name="description"
+            rows="5"
+            class="form-control"
+            placeholder="Enter note description"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Add Note</button>
+      </form>
 
-      <label for="description">Description</label>
-      <textarea
-        id="description"
-        name="description"
-        rows="5"
-        placeholder="Enter note description"
-        required
-      ></textarea>
-
-      <button type="submit">Add Note</button>
-    </form>
-
-    <div id="NotesCards"></div>
+      <div id="NotesCards" class="row g-3"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
     <script src="script.js"></script>
