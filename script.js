@@ -1,4 +1,4 @@
-let allNotes = []; // To store all notes for filtering and displaying.
+let allNotes = []; // To store all notes for filtering and displaying them.
 
 function HandleFormSubmit(event) {
   event.preventDefault();
