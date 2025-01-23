@@ -19,6 +19,9 @@ function HandleFormSubmit(event) {
       updateCounts(allNotes.length, allNotes.length);
     })
     .catch((e) => console.log(e.message));
+
+  document.getElementById("title").value = "";
+  document.getElementById("description").value = "";
 }
 
 function displayNotesOnDScreen(NotesDetails) {
