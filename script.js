@@ -17,6 +17,7 @@ function HandleFormSubmit(event) {
       allNotes.push(res.data); // Add the new note to the list.
       displayNotesOnDScreen(res.data);
       updateCounts(allNotes.length, allNotes.length);
+      alert("Note added successfully");
     })
     .catch((e) => console.log(e.message));
 
